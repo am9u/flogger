@@ -1,0 +1,25 @@
+{
+    "name" : "flogger",
+    "description" : "A Personal Fitness Logger",
+    "version" : "0.1.0",
+
+    "dependencies" : {
+        "express" : "2.4.6",
+        "jade" : "0.15.4",
+        "mongoose" : "2.1.2"
+    },
+
+    "devDependencies" : {
+        "expresso" : "0.8.1"
+    },
+
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/am9u/flogger.git"
+    },
+
+    "engines" : {
+        "node" : "0.4.11"
+    }
+
+}
