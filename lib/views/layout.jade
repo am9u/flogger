@@ -1,0 +1,64 @@
+!!! 5
+//if lt IE 7
+    <html class="no-js ie6" lang="en">
+//if IE 7
+  <html class="no-js ie7" lang="en">
+//if IE 8
+  <html class="no-js ie8" lang="en">
+//[if (gte IE 9)|!(IE)]><!
+html(class="no-js", lang="en")
+  //<![endif]
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    title Jon's Fitness Tracker
+    meta(name="description", content="")
+    meta(name="author", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0; user-scalable=0;")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(rel="apple-touch-icon", href="/apple-touch-icon.png")
+    link(rel="stylesheet", href="/css/style.css?v=2")
+    link(rel="stylesheet", media="handheld", href="/css/handheld.css?v=2")
+    script(src="/js/libs/modernizr-1.7.min.js")
+
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js")
+    script
+      window.jQuery || document.write('<script src="js/libs/jquery-1.6.1.js">\\x3C/script>')
+
+    //script(src="/js/plugins.js")
+    //script(src="/js/script.js")
+
+    script(src="/js/underscore/underscore.js")
+    script(src="/js/backbone/backbone.js")
+
+    link(rel="stylesheet", href="/js/chosen/chosen/chosen.css?v=2")
+    script(src="/js/chosen/chosen/chosen.jquery.js")
+
+    link(rel="stylesheet", href="http://jquerymobile.com/demos/1.0a4.1/experiments/ui-datepicker/jquery.ui.datepicker.mobile.css")
+    script(src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.js")
+    script(src="http://jquerymobile.com/demos/1.0a4.1/experiments/ui-datepicker/jQuery.ui.datepicker.js")
+    script(src="/js/jquery-ui/jquery.ui.datepicker.mobile.js")
+
+    script(src="/js/app.js")
+
+    //if lt IE 7
+      script(src="js/libs/dd_belatedpng.js")
+      script
+        DD_belatedPNG.fix('img, .png_bg')
+
+  body
+    #container
+      header
+      #main(role="main")!= body
+      footer
+
+
+
+    script
+      var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+      s.parentNode.insertBefore(g,s)}(document,"script"));
+

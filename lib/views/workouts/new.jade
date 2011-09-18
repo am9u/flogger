@@ -1,0 +1,28 @@
+header.toolbar-header
+    h3 Add a New Workout
+
+section.panel
+    form(method="post", action="/workouts")
+        div.form-field
+            label.label Date
+            input(type="date", name="workout[date]", value=workout.date)#workout-date.input
+        
+        each exercise, i in workout.exercises
+            div.form-field
+                label.label Exercise
+                select.input-exercise(name="workout[exercises][" + i + "]", value=workout.exercises[i].id).input
+
+        div#exercises
+
+        p 
+            input(type="button", value="Add Exercise")#btn-add-exercise
+
+
+script(type="text/html")#tpl-exercise-type-row
+    option(value="{{ value }}") {{ label }}
+
+script
+   Exercises.reset(!{JSON.stringify(exercises)}); 
+
+
+
