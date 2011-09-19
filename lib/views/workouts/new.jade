@@ -1,25 +1,76 @@
-header.toolbar-header
-    h3 Add a New Workout
 
-section.panel
-    form(method="post", action="/workouts")
-        div.form-field
-            label.label Date
-            input(type="date", name="workout[date]", value=workout.date)#workout-date.input
+section#app-view
+    div.page-view
+        header.toolbar-header
+            h3 Add a New Workout
+
+        div.panel
+            form(method="post", action="/workouts")
+
+                //div.form-field
+                //    label.label Date
+                //    input(type="date", name="workout[date]", value=workout.date)#workout-date.input
+                
+                
+                //each exercise, i in workout.exercises
+                //    div.form-field
+                //        label.label Exercise
+                //        select.input-exercise(name="workout[exercises][" + i + "]", value=workout.exercises[i].id).input
+                
+
+                div#exercises
+
+                p 
+                    input(type="button", value="Add Exercise")#btn-add-exercise
+
+
+script(type="text/html")#tpl-page-add-exercise
+    header.toolbar-header
+        h3 Add New Exercise
+
+    div.panel
         
-        each exercise, i in workout.exercises
-            div.form-field
-                label.label Exercise
-                select.input-exercise(name="workout[exercises][" + i + "]", value=workout.exercises[i].id).input
+    //input(type="button", value="Cancel").btn-cancel
 
-        div#exercises
-
-        p 
-            input(type="button", value="Add Exercise")#btn-add-exercise
-
+    footer.toolbar-footer
+        input(type="button", value="Save Exercise").btn-save-exercise
+        
 
 script(type="text/html")#tpl-exercise-type-row
     option(value="{{ value }}") {{ label }}
+
+
+script(type="text/html")#tpl-add-exercise
+    div.col-exercise-list
+        label.label Exercise
+            
+    div.exercise-sets-container
+        
+    input(type="button", value="Add Set").btn-add-exercise-set
+
+
+script(type="text/html")#tpl-exercise-set
+    tr
+        th(scope="row") Target Reps
+
+        td.col-target-reps
+            label.label-reps Min
+            input(name="target_min_reps").field-reps
+    
+        td.col-target-reps
+            label.label-reps Max
+            input(name="target_max_reps").field-reps
+
+    tr
+        th(scope="row") Actual Reps
+
+        td.col-actual-reps
+            label.label-reps Min
+            input(name="actual_min_reps").field-reps
+            
+        td.col-actual-reps
+            label.label-reps Min
+            input(name="actual_max_reps").field-reps
 
 script
    Exercises.reset(!{JSON.stringify(exercises)}); 
